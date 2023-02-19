@@ -8,9 +8,10 @@ import java.util.Date;
 
 @Service
 public class PostService {
-    public ArrayList<Post> listAllPosts() {
-        ArrayList<Post> posts = new ArrayList<Post>();
 
+    ArrayList<Post> posts = new ArrayList<Post>();
+
+    public PostService() {
         posts.add(new Post("В Африканском союзе объяснили, почему делегацию Израиля выгнали с саммита",
                 new Date(2454545564L),
                 34));
@@ -20,7 +21,13 @@ public class PostService {
         posts.add(new Post("Пекин отказался мириться с попытками США надавить на отношения России и КНР",
                 new Date(6576743564L),
                 57));
+    }
 
+    public ArrayList<Post> listAllPosts() {
         return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
     }
 }
