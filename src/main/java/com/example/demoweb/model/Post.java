@@ -2,9 +2,16 @@ package com.example.demoweb.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-public class Post {
+@Entity
+public class Post implements Serializable {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String text;
     private Integer likes;
@@ -19,6 +26,9 @@ public class Post {
         this.text = _text;
         this.creationDate = _createDate;
         this.likes = _likes;
+    }
+
+    public Post() {
     }
 
     public Long getId() { return this.id; }
