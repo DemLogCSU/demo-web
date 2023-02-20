@@ -31,7 +31,7 @@ public class Post implements Serializable {
     public Post() {
     }
 
-    public Long getId() { return this.id; }
+    public Long getId() { return id; }
 
     public void setLikes(int likes) {
         this.likes = likes;
@@ -47,6 +47,6 @@ public class Post implements Serializable {
 
     public String getCreationDate() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-        return formatter.format(this.creationDate);
+        return formatter.format(creationDate);
     }
 }
